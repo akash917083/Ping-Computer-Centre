@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ping Computer Centre - Registration</title>
+    <style>
+        body { background:#d6f0ff; font-family: Arial, sans-serif; color:#111; margin:20px; }
+        .container { max-width:900px; margin:0 auto; background:#fff0f6; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+        header { text-align:center; margin-bottom:8px; }
+        header h1 { margin:0; text-decoration:underline; }
+        .meta { text-align:center; font-size:0.95rem; margin-bottom:12px; }
+        table { width:100%; border-collapse:collapse; }
+        td { padding:8px; vertical-align:top; }
+        td.label { width:28%; font-weight:600; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+            width:100%; padding:8px; box-sizing:border-box; border:1px solid #ccc; border-radius:4px;
+        }
+        input[type="file"] { padding:4px 0; }
+        .phone-wrap { display:flex; gap:8px; align-items:center; }
+        .small { width:70px; }
+        .actions { text-align:right; padding-top:8px; }
+        input[type="submit"], input[type="reset"] { padding:8px 16px; border-radius:4px; border:0; cursor:pointer; }
+        input[type="submit"] { background:#007acc; color:#fff; }
+        input[type="reset"] { background:#ccc; color:#000; margin-right:8px; }
+        @media (max-width:600px){ td.label { display:block; width:100%; } td{ display:block; } .actions{text-align:center;} }
+    </style>
+</head>
+<body>
+    <div class="container" role="main">
+        <header>
+            <h1>PING COMPUTER CENTRE</h1>
+            <div class="meta">
+                Gas Godown Road Near flyover, Shadipur, 212601 (U.P.)<br>
+                Contact: +91 8545458565, +91 2546854658
+            </div>
+            <hr>
+        </header>
+
+        <form action="https://formsubmit.co/akash917083@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+            <!-- optional: add <input type="hidden" name="_captcha" value="false"> if using formsubmit settings -->
+            <table>
+                <tr>
+                    <td class="label" colspan="2" style="text-align:center;"><h2>Registration Form</h2></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="first_name">Name</label></td>
+                    <td>
+                        <div style="display:flex;gap:8px;">
+                            <input id="first_name" name="first_name" type="text" placeholder="First name" required>
+                            <input id="last_name" name="last_name" type="text" placeholder="Last name" required>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="father_name">Father's Name</label></td>
+                    <td><input id="father_name" name="father_name" type="text" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="mobile">Mobile No.</label></td>
+                    <td>
+                        <div class="phone-wrap">
+                            <input type="hidden" name="country_code" value="+91">
+                            <input class="small" type="text" value="+91" readonly aria-hidden="true">
+                            <input id="mobile" name="mobile" type="tel" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile" required>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="email">Email</label></td>
+                    <td><input id="email" name="email" type="email" placeholder="xyz@gmail.com" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="dob">D.O.B.</label></td>
+                    <td><input id="dob" name="dob" type="date" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="document_type">Document</label></td>
+                    <td>
+                        <select id="document_type" name="document_type" required>
+                            <option value="">-- Select Document --</option>
+                            <option>Adhar Card</option>
+                            <option>Pan Card</option>
+                            <option>Driving Licence</option>
+                            <option>Bank Passbook</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="document_number">Document Number</label></td>
+                    <td><input id="document_number" name="document_number" type="text" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="qualification">Qualification</label></td>
+                    <td>
+                        <select id="qualification" name="qualification" required>
+                            <option value="">-- Select --</option>
+                            <option>High School</option>
+                            <option>10+2 Intermediate</option>
+                            <option>Diploma</option>
+                            <option>Graduation</option>
+                            <option>Post Graduation</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">Gender</td>
+                    <td>
+                        <label><input type="radio" name="gender" value="Male" required> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">Course</td>
+                    <td>
+                        <label><input type="checkbox" name="course[]" value="CCC"> CCC</label>
+                        <label><input type="checkbox" name="course[]" value="O Level"> 'O' Level</label>
+                        <label><input type="checkbox" name="course[]" value="Tally"> Tally</label>
+                        <br>
+                        <label><input type="checkbox" name="course[]" value="ADCA"> ADCA</label>
+                        <label><input type="checkbox" name="course[]" value="Typing"> Typing</label>
+                        <label><input type="checkbox" name="course[]" value="A Level"> 'A' Level</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="photo">Upload Photo</label></td>
+                    <td><input id="photo" name="photo" type="file" accept="image/*" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="signature">Upload Signature</label></td>
+                    <td><input id="signature" name="signature" type="file" accept="image/*" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="address">Address</label></td>
+                    <td><textarea id="address" name="address" rows="3" maxlength="300" placeholder="Enter your address" required></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="actions">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Register">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

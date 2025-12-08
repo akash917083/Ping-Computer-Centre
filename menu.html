@@ -1,0 +1,128 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Computer Centre</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('zen.png');
+            background-size: cover;
+
+        }
+
+        .main-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: yellow;
+            display: flex; 
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .main-menu li {
+            position: relative; 
+            margin-right: 1px; 
+        }
+
+        .main-menu li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .main-menu li a:hover {
+            background-color: orange;
+            color:white;
+            font-size: 18px;
+             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             transform: scale(1.0);
+             text-shadow: 0px 0px 0px red;
+        }
+
+        .submenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            
+            position: absolute; 
+            top: 100%; 
+            left: 0;
+            
+            background-color: yellow; 
+            min-width: 220px; 
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+            
+            display: none; 
+        }
+
+        .submenu li a {
+            padding: 12px 16px;
+            color: lightred; 
+            text-align: left;
+            transition: background-color 0.3s, color 0.3s; 
+        }
+        .submenu li a:hover {
+            background-color: orange;
+            color: white;}
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="main-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="Form.html">Apply Course</a></li>
+            
+            <li class="dropdown">
+                <a href="#">Gallery ▼</a>
+                <ul class="submenu">
+                    <li><a href="#">Branch 1</a></li>
+                    <li><a href="#">Branch 2</a></li>
+                    <li><a href="#">Branch 3</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#">Contact ▼</a>
+                <ul class="submenu">
+                    <li><a href="tel:1234567890">Mobile no.</a></li>
+                    <li><a href="pingcomputerftp14@gmail.com
+
+                     ">Email</a></li>
+                    <li><a href="https://www.pingcomputer.org/" target="_blank">Website</a></li>
+                </ul>
+            </li>
+
+            <li><a href="about.html" onclick="return
+            openSmooth(event)">About</a>
+            <script>
+                function opensmooth(event){
+                    event.preventDefault();
+                    Document.body.classlist.add("fade-out");
+                    settimeout(()=>{
+                        window.location=event.target.href;
+                    },500);
+                }
+            </script>
+        </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
