@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>Branch 1 Gallery</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex; 
+            min-height: 100vh; 
+            
+            }
+        
+           .info-panel {
+            width: 50%;
+            padding: 40px;
+            background-color: lightyellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .info-panel h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .info-panel p {
+            color: #555;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .gallery-panel {
+            width: 50%;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .slideshow-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .mySlides {
+            display: none; 
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5); }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="info-panel">
+        <h1>Branch 1</h1>
+        <p>
+            **Address:**<br>
+            Gas Godown Road<br>
+            Near Flyover Shadipur,<br>
+            Fatehpur - 212601,<br>
+            India
+        </p>
+        <p>
+            **Contact:** 9636 taman zero 32
+        </p>
+    </div>
+
+    <div class="gallery-panel">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="c1.avif" alt="Branch 1 Photo 1">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="c2.avif" alt="Branch 1 Photo 2">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="c3.webp" alt="Branch 1 Photo 3">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            
+            if (n > slides.length) {slideIndex = 1}    
+            
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
