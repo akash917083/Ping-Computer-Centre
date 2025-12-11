@@ -1,197 +1,175 @@
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ping Computer Centre</title>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-image: url('zen.png');
-            background-size: cover;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ping Computer Centre</title>
 
-        }
+<style>
 
-        .main-menu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: yellow;
-            display: flex; 
-            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-
-        .main-menu li {
-            position: relative; 
-            margin-right: 1px; 
-        }
-
-        .main-menu li a {
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 15px 20px;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
-
-        .main-menu li a:hover {
-            background-color: orange;
-            color:white;
-            font-size: 18px;
-             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-             transform: scale(1.0);
-             text-shadow: 0px 0px 0px red;
-        }
-
-        .submenu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            
-            position: absolute; 
-            top: 100%; 
-            left: 0;
-            
-            background-color: yellow; 
-            min-width: 220px; 
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 10;
-            
-            display: none; 
-        }
-
-        .submenu li a {
-            padding: 12px 16px;
-            color: lightred; 
-            text-align: left;
-            transition: background-color 0.3s, color 0.3s; 
-        }
-        .submenu li a:hover {
-            background-color: orange;
-            color: white;}
-
-        .dropdown:hover .submenu {
-            display: block;
-        }
-        .fade-out {
-            opacity: 0;
-            transition: opacity 2s ease;
-        }
-.developer-credit {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    padding: 8px 12px;
-    background-color: yellow; 
-    color: black; 
-    font-size: 1.0em;
-    border-radius: 5px;
-    z-index: 1000;
-    
-
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+body{
+    margin:0;
+    font-family:Arial;
+    background-image:url('zen.png');
+    background-size:cover;
+    padding-top:60px;
 }
 
+/* ===============================
+   FIXED TOP MENU (NO HOVER EFFECT)
+   =============================== */
 
-.instagram-link {
-
-    font-family: 'Georgia', 'Times New Roman', serif; 
-    
-    color: red;
-    text-decoration: none; 
-    font-weight: bold; 
-    
-
-    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; 
-    
-
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5); 
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:yellow;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:999;
 }
 
-
-.instagram-link:hover {
-    color: blue;
-    text-decoration: none;
-    
-
-    transform: translateY(2px); 
-    
-    
-    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffc107; 
+/* MENU LIST */
+.main-menu{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
 }
 
-    </style>
-   
+/* MENU ITEMS */
+.main-menu li{
+    position:relative;
+}
+
+/* MENU LINKS */
+.main-menu li a{
+    display:block;
+    padding:15px 20px;
+    text-decoration:none;
+    color:black;
+    transition:0.3s;
+}
+
+/* =========================
+   ONLY ITEM HOVER (UBHARNA)
+   ========================= */
+.main-menu li a:hover{
+    background:orange;
+    color:white;
+    transform:scale(1.05);
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* SUBMENU */
+.submenu{
+    list-style:none;
+    margin:0;
+    padding:0;
+    background:yellow;
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:180px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.submenu li a{
+    padding:12px 15px;
+}
+
+.dropdown:hover .submenu{
+    display:block;
+}
+
+/* ============================
+   RESPONSIVE (MOBILE VERSION)
+   ============================ */
+
+.menu-btn{
+    display:none;
+    background:black;
+    color:white;
+    padding:12px 15px;
+    font-size:20px;
+    border:none;
+}
+
+/* MOBILE VIEW */
+@media (max-width:768px){
+
+    .main-menu{
+        display:none;
+        flex-direction:column;
+        width:100%;
+    }
+
+    .main-menu li{
+        width:100%;
+    }
+
+    .menu-btn{
+        display:block;
+        width:100%;
+        text-align:left;
+    }
+
+    .submenu{
+        position:static;
+        box-shadow:none;
+    }
+
+    .dropdown:hover .submenu{
+        display:block;
+    }
+}
+
+</style>
+
+<script>
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    if(menu.style.display === "flex"){
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
+
 </head>
+
 <body>
 
-    <nav>
-        <ul class="main-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="Form.html">Apply Course</a></li>
-            
-            <li class="dropdown">
-                <a href="#">Gallery ▼</a>
-                <ul class="submenu">
-                    <li><a href="branch1.html">Branch 1</a></li>
-                    <li><a href="branch2.html">Branch 2</a></li>
-                    <li><a href="branch3.html">Branch 3</a></li>
-                </ul>
-            </li>
-            
-            <li class="dropdown">
-                <a href="#">Contact ▼</a>
-                <ul class="submenu">
-                    <li><a href="tel:+919170834482">Mobile no.</a></li>
-                    <li><a href="mailto:akash917083@gmail.com" target="_blank">Email</a></li>
-                    <li><a href="https://www.pingcomputer.org/" target="_blank">Website</a></li>
-                </ul>
-            </li>
+<nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
 
-            <li><a href="about.html" onclick="return
-            openSmooth(event)">About</a>
-            </li>
-            
-            <script>
-                function opensmooth(event){
-                    event.preventDefault();
-                    Document.body.classlist.add("fade-out");
-                    settimeout(()=>{
-                        window.location=event.target.href;
-                    },500);
-                }
-            </script>
+    <ul class="main-menu" id="menu">
+        <li><a href="#">Home</a></li>
+
+        <li><a href="Form.html">Apply Course</a></li>
+
+        <li class="dropdown">
+            <a href="#">Gallery ▼</a>
+            <ul class="submenu">
+                <li><a href="branch1.html">Branch 1</a></li>
+                <li><a href="branch2.html">Branch 2</a></li>
+                <li><a href="branch3.html">Branch 3</a></li>
+            </ul>
         </li>
-        </ul>
-    </nav>
-    <div class="developer-credit">
-        Developed by:- 
-        <a href="https://akash917083.github.io/Profile/" target="_self" class="instagram-link">
-            RG-18
-        </a>
-    </div>
-    
-</body>
-</html>
+
+        <li class="dropdown">
+            <a href="#">Contact ▼</a>
+            <ul class="submenu">
+                <li><a href="tel:+919170834482">Mobile No.</a></li>
+                <li><a href="mailto:akash917083@gmail.com">Email</a></li>
+                <li><a href="https://www.pingcomputer.org" target="_blank">Website</a></li>
+                <li><a href="https://wa.me/9170834482?text=Hello" target="_blank">WhatsApp</a></li>
+            </ul>
+        </li>
+
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
