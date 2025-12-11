@@ -15,7 +15,7 @@ body{
 }
 
 /* ===============================
-   FIXED TOP MENU (NO HOVER EFFECT)
+   FIXED TOP MENU 
    =============================== */
 
 nav{
@@ -25,6 +25,18 @@ nav{
     background:yellow;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
     z-index:999;
+}
+
+/* HAMBURGER BUTTON */
+.menu-btn{
+    display:none;
+    background:black;
+    color:white;
+    padding:12px 15px;
+    font-size:20px;
+    border:none;
+    width:100%;
+    text-align:left;
 }
 
 /* MENU LIST */
@@ -49,9 +61,7 @@ nav{
     transition:0.3s;
 }
 
-/* =========================
-   ONLY ITEM HOVER (UBHARNA)
-   ========================= */
+/* ONLY ITEM HOVER */
 .main-menu li a:hover{
     background:orange;
     color:white;
@@ -82,20 +92,14 @@ nav{
 }
 
 /* ============================
-   RESPONSIVE (MOBILE VERSION)
+   RESPONSIVE (MOBILE)
    ============================ */
 
-.menu-btn{
-    display:none;
-    background:black;
-    color:white;
-    padding:12px 15px;
-    font-size:20px;
-    border:none;
-}
-
-/* MOBILE VIEW */
 @media (max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
 
     .main-menu{
         display:none;
@@ -105,12 +109,6 @@ nav{
 
     .main-menu li{
         width:100%;
-    }
-
-    .menu-btn{
-        display:block;
-        width:100%;
-        text-align:left;
     }
 
     .submenu{
@@ -123,16 +121,41 @@ nav{
     }
 }
 
+/* ============================
+   DEVELOPER CREDIT BOX
+   ============================ */
+
+.developer-credit{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    background:yellow;
+    padding:8px 12px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:14px;
+    box-shadow:0 3px 6px rgba(0,0,0,0.3);
+    z-index:999;
+}
+
+.instagram-link{
+    color:red;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.instagram-link:hover{
+    color:blue;
+    text-shadow:0 0 4px gold;
+    transform:translateY(2px);
+}
+
 </style>
 
 <script>
 function toggleMenu(){
     let menu = document.getElementById("menu");
-    if(menu.style.display === "flex"){
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
-    }
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 </script>
 
@@ -170,6 +193,14 @@ function toggleMenu(){
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
+
+<!-- DEVELOPED BY BOX -->
+<div class="developer-credit">
+    Developed by: 
+    <a href="https://akash917083.github.io/Profile/" target="_self" class="instagram-link">
+        RG-18
+    </a>
+</div>
 
 </body>
 </html>
